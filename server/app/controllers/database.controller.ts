@@ -90,7 +90,16 @@ export class DatabaseController {
             console.error(e.stack);
             res.json(-1);
           });
-      })
+      });
+
+      router.get("/numerosFournisseur", (req: Request, res: Response, _: NextFunction) => {
+        this.databaseService.getNumerosFournisseur().then((result: pg.QueryResult) => {
+          res.json(result.rows.map(
+            (numeroFournisseur: { numerofournisseur: number }) =>
+              numeroFournisseur.numerofournisseur
+          ));
+        });
+      });
       return router;
     };
 

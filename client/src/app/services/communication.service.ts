@@ -21,8 +21,8 @@ export class CommunicationService {
   }
 
   
-  public addPlanRepas(planRepas: PlanRepas) : Observable<void>{
-    return this.http.post<void>(this.BASE_URL + "/planRepas", planRepas).pipe(catchError(this.handleError<void>('addPlanRepas')));
+  public addPlanRepas(planRepas: PlanRepas) : Observable<number>{
+    return this.http.post<number>(this.BASE_URL + "/planRepas", planRepas).pipe(catchError(this.handleError<number>('addPlanRepas')));
   }
 
   public getAllPlanRepas() : Observable<PlanRepas[]>{
@@ -35,6 +35,10 @@ export class CommunicationService {
   
   public deletePlanRepas(planRepas  :PlanRepas) : Observable<number>{
     return this.http.delete<number>(this.BASE_URL + `/planRepas/${planRepas.numeroplan}`).pipe(catchError(this.handleError<number>('deletePlanRepas')));
+  }
+
+  public getNumerosFournisseur(): Observable<number[]> {
+    return this.http.get<number[]>(this.BASE_URL+'/numerosFournisseur').pipe(catchError(this.handleError<number[]>('getNumerosFournisseurs')));
   }
   // À DÉCOMMENTER ET À UTILISER LORSQUE VOTRE COMMUNICATION EST IMPLÉMENTÉE
   private handleError<T>(

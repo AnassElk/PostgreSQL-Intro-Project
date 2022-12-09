@@ -97,4 +97,12 @@ export class DatabaseService {
     client.release()
     return res;
   }
+
+  public async getNumerosFournisseur(): Promise<pg.QueryResult> {
+    const client = await this.pool.connect();
+    const queryText: string = `SELECT numerofournisseur from Fournisseur`;
+    const res = await client.query(queryText);
+    client.release();
+    return res;
+  }
 }

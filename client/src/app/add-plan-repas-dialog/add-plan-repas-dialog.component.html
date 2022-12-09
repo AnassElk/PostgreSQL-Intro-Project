@@ -5,8 +5,9 @@
 </div>
 <div>
     <header style="font-size: small;">Choisissez le numero fournisseur du plan repas</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30"placeholder="Exemple: 904983" [(ngModel)]="numeroFournisseur">
-    
+    <select [(ngModel)]="numeroFournisseur" style="width: 29%; background-color: rgb(160, 160, 160);">
+        <option *ngFor="let numeroFournisseur of numerosFournisseur" value="numeroFournisseur">{{numeroFournisseur}}</option>
+    </select>
 </div>
 <div>
     <header style="font-size: small;">Choisissez le prix du plan repas</header>
@@ -27,7 +28,7 @@
 </div>
 <div>
     <button mat-button mat-dialog-close color="primary"
-        *ngIf=" numeroFournisseur && categorie && frequence && nbrPersonnes && nbrCalories && prix"
+        [disabled]="!formIsValid()"
         (click)="this.addPlanRepas()">Ajouter</button>
     <button mat-button mat-dialog-close color="primary">Annuler <mat-icon>clear</mat-icon></button>
 </div> 

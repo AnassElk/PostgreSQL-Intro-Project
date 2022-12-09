@@ -18,10 +18,23 @@ export class AddPlanRepasDialogComponent implements OnInit {
   nbrPersonnes: number;
   nbrCalories: number;
   prix: number;
+  numerosFournisseur: number[] = [1,2,3,4,5];
 
-  constructor(private communicationService: CommunicationService) {}
+  constructor(private communicationService: CommunicationService) {
+    this.numeroFournisseur = 1;
+    this.categorie = 'categorie fictive';
+    this.frequence = 3;
+    this.nbrPersonnes = 4;
+    this.nbrCalories = 1800;
+    this.prix = 12.99;
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void {
+    this.communicationService.getNumerosFournisseur().subscribe((numeroFournisseurArray) => {
+      // this.numerosFournisseur = numeroFournisseurArray;
+    })
+  }
 
   addPlanRepas() {
     this.communicationService.addPlanRepas({
@@ -31,7 +44,23 @@ export class AddPlanRepasDialogComponent implements OnInit {
       nbrpersonnes: this.nbrPersonnes,
       prix: this.prix,
       numerofournisseur: this.numeroFournisseur,
-    } as PlanRepas).subscribe(()=>{window.location.reload();});
+    } as PlanRepas).subscribe((res)=>{
+      res === -1 ? window.alert(
+            "Une erreur est survenue. Veuillez vérifiez la validité de vos entrées"
+          )
+        : window.location.reload();
+    });
     
+  }
+
+  formIsValid(): boolean {
+    // const twoDecimalsRegex = /^(\d+(?:,\d{1,2})?).*/
+    return (
+      this.categorie.trim().length > 0 &&
+    this.frequence >= 0 &&
+    this.nbrCalories >= 0 &&
+    this.nbrPersonnes >= 0 &&
+    this.prix > 0
+    )
   }
 }
