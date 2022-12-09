@@ -1,0 +1,34 @@
+<h2 mat-dialog-title align="center">Ajouter un nouveau plan repas</h2>
+<div>
+    <header style="font-size: small;">Choisissez la categorie du plan repas</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30"placeholder="Exemple: mediteranean" [(ngModel)]="categorie">
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le numero fournisseur du plan repas</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30"placeholder="Exemple: 904983" [(ngModel)]="numeroFournisseur">
+    
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le prix du plan repas</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30" placeholder="Exemple: 34" [(ngModel)]="prix">
+</div>
+<div>
+    <header style="font-size: small;">Choisissez la frequence du plan repas</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 3" [(ngModel)]="frequence">
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le nombre de calories du plan repas</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 500" [(ngModel)]="nbrCalories">
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le nombre de personnes</header>
+    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 5" [(ngModel)]="nbrPersonnes">
+
+</div>
+<div>
+    <button mat-button mat-dialog-close color="primary"
+        *ngIf=" numeroFournisseur && categorie && frequence && nbrPersonnes && nbrCalories && prix"
+        (click)="this.addPlanRepas()">Ajouter</button>
+    <button mat-button mat-dialog-close color="primary">Annuler <mat-icon>clear</mat-icon></button>
+</div> 
+   

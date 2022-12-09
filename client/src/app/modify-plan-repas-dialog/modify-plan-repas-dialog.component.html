@@ -1,0 +1,33 @@
+<h2 mat-dialog-title align="center">Ajouter un nouveau plan repas</h2>
+<div>
+    <header style="font-size: small;">Choisissez la categorie du plan repas</header>
+    <input [(ngModel)]="categorie" maxlength="20"type="text" >
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le numero fournisseur du plan repas</header>
+    <input [(ngModel)]="numeroFournisseur" maxlength="20" >
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le prix du plan repas</header>
+    <input [(ngModel)]="prix" maxlength="20" >
+</div>
+<div>
+    <header style="font-size: small;">Choisissez la frequence du plan repas</header>
+    <input [(ngModel)]="frequence"maxlength="20">
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le nombre de calories du plan repas</header>
+    <input [(ngModel)]="nbrCalories" maxlength="20" >
+</div>
+<div>
+    <header style="font-size: small;">Choisissez le nombre de personnes</header>
+    <input [(ngModel)]="nbrPersonnes" maxlength="20" >
+
+</div>
+<div>
+    <button mat-button mat-dialog-close color="primary"
+        *ngIf=" numeroFournisseur && categorie && frequence && nbrPersonnes && nbrCalories && prix"
+        (click)="this.modifyPlanRepas()">Modifier</button>
+    <button mat-button mat-dialog-close color="primary">Annuler <mat-icon>clear</mat-icon></button>
+</div> 
+   
