@@ -9,7 +9,7 @@ Contributeurs : Anass El Kettani et Dylane Chikhoune
 
 Configuration de la base de données : 
     -Créer la nouvelle base de donnees avec comme user postgres
-    -En suivant ces tapes créer un mot de passe : Login/Group Roles -> Click droit sur postgres -> Properties -> Definition. Nommez le mot de passe root
+    -En suivant ces étapes créer un mot de passe : Login/Group Roles -> Click droit sur postgres -> Properties -> Definition. Nommez le mot de passe root
     - Dans le fichier database.service.ts, assurez vous d'avoir cette configuration :
     user: "postgres",
     database: <nomBD>,

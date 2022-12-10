@@ -17,6 +17,8 @@ export class ModifyPlanRepasDialogComponent implements OnInit {
   nbrPersonnes: number;
   nbrCalories: number;
   prix: number;
+  numerosFournisseur: number[];
+
 
   constructor(private communicationService: CommunicationService, @Inject(MAT_DIALOG_DATA) public data: PlanRepas) {
     this.numeroPlan = this.data.numeroplan;
@@ -29,9 +31,21 @@ export class ModifyPlanRepasDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.communicationService.getNumerosFournisseur().subscribe((numeroFournisseurArray) => {
+      this.numerosFournisseur = numeroFournisseurArray? numeroFournisseurArray: [];
+    })
   }
 
+  formIsValid(): boolean {
+    // const twoDecimalsRegex = /^(\d+(?:,\d{1,2})?).*/
+    return (
+      this.categorie.trim().length > 0 &&
+    this.frequence >= 0 &&
+    this.nbrCalories >= 0 &&
+    this.nbrPersonnes >= 0 &&
+    this.prix > 0
+    )
+  }
 
 
   modifyPlanRepas() {
@@ -43,7 +57,11 @@ export class ModifyPlanRepasDialogComponent implements OnInit {
       prix: this.prix,
       numerofournisseur: this.numeroFournisseur,
       numeroplan: this.numeroPlan
-    } as PlanRepas).subscribe(()=>{window.location.reload();});
-    
+    } as PlanRepas).subscribe((res)=>{
+      res === -1 ? window.alert(
+        "Une erreur est survenue. Veuillez vérifiez la validité de vos entrées"
+        )
+        : window.location.reload();       
+      });
   }
 }

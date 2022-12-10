@@ -1,29 +1,29 @@
 <h2 mat-dialog-title align="center">Ajouter un nouveau plan repas</h2>
 <div>
     <header style="font-size: small;">Choisissez la categorie du plan repas</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30"placeholder="Exemple: mediteranean" [(ngModel)]="categorie">
+    <input title="Title test" maxlength="20"placeholder="Exemple: mediteranean" [(ngModel)]="categorie">
 </div>
 <div>
     <header style="font-size: small;">Choisissez le numero fournisseur du plan repas</header>
-    <select [(ngModel)]="numeroFournisseur" style="width: 29%; background-color: rgb(160, 160, 160);">
-        <option *ngFor="let numeroFournisseur of numerosFournisseur" value="numeroFournisseur">{{numeroFournisseur}}</option>
+    <select [(ngModel)]="numeroFournisseur" style="width: 29%;">
+        <option *ngFor="let numeroFournisseur of numerosFournisseur" [value]="numeroFournisseur">{{numeroFournisseur}}</option>
     </select>
 </div>
 <div>
     <header style="font-size: small;">Choisissez le prix du plan repas</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" maxlength="30" placeholder="Exemple: 34" [(ngModel)]="prix">
+    <input title="Title test" maxlength="20" placeholder="Exemple: 34" [(ngModel)]="prix">
 </div>
 <div>
     <header style="font-size: small;">Choisissez la frequence du plan repas</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 3" [(ngModel)]="frequence">
+    <input title="Title test"placeholder="Exemple: 3" [(ngModel)]="frequence">
 </div>
 <div>
     <header style="font-size: small;">Choisissez le nombre de calories du plan repas</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 500" [(ngModel)]="nbrCalories">
+    <input title="Title test" placeholder="Exemple: 500" [(ngModel)]="nbrCalories">
 </div>
 <div>
     <header style="font-size: small;">Choisissez le nombre de personnes</header>
-    <input title="Title test" style="background-color: rgb(160, 160, 160);" placeholder="Exemple: 5" [(ngModel)]="nbrPersonnes">
+    <input title="Title test" placeholder="Exemple: 5" [(ngModel)]="nbrPersonnes">
 
 </div>
 <div>

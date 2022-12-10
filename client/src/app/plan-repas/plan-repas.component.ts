@@ -15,7 +15,7 @@ import { CommunicationService } from '../services/communication.service';
 export class PlanRepasComponent implements OnInit {
   planRepasTable: PlanRepas[];
   planRepas: PlanRepas;
-  displayedColumns: string[] = ['numeroplan', 'numeroFournisseur', 'prix', 'categorie', 'nbrCalories', 'nbrPersonnes', 'frequence'];
+  displayedColumns: string[] = ['numeroplan', 'numeroFournisseur', 'prix', 'categorie', 'nbrCalories', 'nbrPersonnes', 'frequence', 'bouton'];
 
   @ViewChild(MatTable) table: MatTable<any>;
 

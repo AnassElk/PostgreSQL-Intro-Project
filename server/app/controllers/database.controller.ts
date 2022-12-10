@@ -57,7 +57,6 @@ export class DatabaseController {
       });
     
       router.put("/planRepas", (req: Request, res: Response, _: NextFunction) => {
-        console.log(req.body)
         const planRepas: PlanRepas = {
           categorie: req.body.categorie,
           frequence: req.body.frequence,

@@ -3,18 +3,16 @@
     <a class="navbar-brand title" href="/" matTooltip="Retournez à l'accueil">INF3710 - TP4</a>
     <div class="navbar-expand mr-auto">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/ROUTEUR_À_IMPLÉMENTER">Ajouter</a>
-        <a class="nav-item nav-link active" routerLink="/ROUTEUR_À_IMPLÉMENTER">Modifier</a>
-        <a class="nav-item nav-link active" routerLink="/ROUTEUR_À_IMPLÉMENTER">Supprimer</a>
+        <a class="nav-item nav-link active" routerLink="/plan-repas">Liste des plans repas</a>
       </div>
     </div>
   </nav>
 
   <div class="home" *ngIf="route == ''">
     <p>
-      Titre
+      Bienvenue au site des plans repas
     </p>
-    <button mat-raised-button color="primary" class="btn" routerLink="/ROUTEUR_À_IMPLÉMENTER">Parcourir quelque chose...<mat-icon>arrow_right</mat-icon></button>
+    <button mat-raised-button color="primary" class="btn" routerLink="/plan-repas">Parcourir la liste des plans repas<mat-icon>arrow_right</mat-icon></button>
   </div>
   <router-outlet></router-outlet>
 </div>

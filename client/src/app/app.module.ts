@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlanRepasComponent } from './plan-repas/plan-repas.component';
 import { AddPlanRepasDialogComponent } from './add-plan-repas-dialog/add-plan-repas-dialog.component';
 import { ModifyPlanRepasDialogComponent } from './modify-plan-repas-dialog/modify-plan-repas-dialog.component';
-import { DeletePlanRepasComponent } from './delete-plan-repas/delete-plan-repas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { DeletePlanRepasComponent } from './delete-plan-repas/delete-plan-repas.
     PlanRepasComponent,
     AddPlanRepasDialogComponent,
     ModifyPlanRepasDialogComponent,
-    DeletePlanRepasComponent
   ],
   imports: [
     CommonModule,

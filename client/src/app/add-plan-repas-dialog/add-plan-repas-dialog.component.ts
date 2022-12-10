@@ -18,7 +18,7 @@ export class AddPlanRepasDialogComponent implements OnInit {
   nbrPersonnes: number;
   nbrCalories: number;
   prix: number;
-  numerosFournisseur: number[] = [1,2,3,4,5];
+  numerosFournisseur: number[];
 
   constructor(private communicationService: CommunicationService) {
     this.numeroFournisseur = 1;
@@ -32,7 +32,7 @@ export class AddPlanRepasDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.communicationService.getNumerosFournisseur().subscribe((numeroFournisseurArray) => {
-      // this.numerosFournisseur = numeroFournisseurArray;
+      this.numerosFournisseur = numeroFournisseurArray? numeroFournisseurArray: [];
     })
   }
 
