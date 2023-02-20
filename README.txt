@@ -1,19 +1,29 @@
-Contributeurs : Anass El Kettani et Dylane Chikhoune
-    Assurez-vous d'avoir installé la version 14 PostgreSQL.
-    Assurez-vous d'avoir installé la version 16 de Node.
-    Allez dans /client et lancez la commande npm install dans un terminal.
-    Allez dans /server et lancez la commande npm install dans un terminal.
-    Allez dans /server/app/services/database.service.ts et modifiez connectionConfig avec les bons paramètres de votre BD.
-    Allez dans /server et faites la commande ng serve --open dans un terminal. Le serveur est lancé au localhost:3000 par défaut.
-    Allez dans /client et faites la commande npm start dans un terminal. Le client est lancé au localhost:4200 par défaut.
+# Project Setup
 
-Configuration de la base de données : 
-    -Créer la nouvelle base de donnees avec comme user postgres
-    -En suivant ces étapes créer un mot de passe : Login/Group Roles -> Click droit sur postgres -> Properties -> Definition. Nommez le mot de passe root
-    - Dans le fichier database.service.ts, assurez vous d'avoir cette configuration :
-    user: "postgres",
-    database: <nomBD>,
-    password: "root",
-    port: 5432,
-    host: "127.0.0.1",
-    keepAlive: true,
+This project was developed by Anass El Kettani and Dylane Chikhoune. The following instructions will guide you through the process of setting up the project on your local machine.
+
+## Prerequisites
+
+Make sure you have the following installed on your system:
+
+- PostgreSQL version 14
+- Node version 16
+
+## Installation
+
+1. Clone the repository to your local machine.
+2. Go to the `/client` directory and run the command `npm install` in a terminal.
+3. Go to the `/server` directory and run the command `npm install` in a terminal.
+4. In `/server/app/services/database.service.ts`, modify `connectionConfig` with the correct parameters for your database.
+
+## Running the project
+
+1. Go to the `/server` directory and run the command `ng serve --open` in a terminal. The server will be launched at `localhost:3000` by default.
+2. Go to the `/client` directory and run the command `npm start` in a terminal. The client will be launched at `localhost:4200` by default.
+
+## Database Configuration
+
+1. Create a new database with the user `postgres`.
+2. Follow these steps to create a password: `Login/Group Roles -> Right-click on postgres -> Properties -> Definition`. Name the password `root`.
+3. In `/server/app/services/database.service.ts`, make sure you have the following configuration:
+
